@@ -1,0 +1,38 @@
+{
+  "description": "Quickly search your KeePassXC password manager database",
+  "developer_name": "Sander",
+  "icon": "images/keepassxc-search.svg",
+  "name": "Opener",
+  "options": {
+    "query_debounce": 0.2
+  },
+  "preferences": [
+    {
+      "default_value": "vc",
+      "description": "Search for projects inside provided root folders to be openened by vscode.",
+      "id": "search",
+      "name": "Folder search",
+      "type": "keyword"
+    },
+    {
+      "default_value": "code",
+      "id": "code_executable_path",
+      "name": "VS code executable path",
+      "type": "input"
+    },
+    {
+      "default_value": "/repos",
+      "description": "Folder(s) containing your projects. Use ',' character to separate multiple rootfolders.",
+      "id": "root_folders",
+      "name": "root folders",
+      "type": "input"
+    },
+    {
+      "default_value": "6",
+      "id": "max-results",
+      "name": "Maximum number of search results to display",
+      "type": "input"
+    }
+  ],
+  "required_api_version": "^2.0.0"
+}
