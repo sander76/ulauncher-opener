@@ -1,7 +1,7 @@
 {
   "description": "Quickly search your KeePassXC password manager database",
   "developer_name": "Sander",
-  "icon": "images/keepassxc-search.svg",
+  "icon": "images/opener.png",
   "name": "Opener",
   "options": {
     "query_debounce": 0.2
