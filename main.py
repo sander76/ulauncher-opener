@@ -60,31 +60,21 @@ class ProjectFolders:
 
 
 class KeywordQueryEventListener(EventListener):
-    @staticmethod
-    def found_match(project: str, args: list[str]) -> bool:
-        found = all((arg for arg in args if arg in project))
-        return found
-
     def on_event(self, event, extension):
-        args = event.get_argument()
-        if args is None:
-            return
-
-        search_terms = args.split(" ")
         found_projects = []
-        max_results = int(extension.preferences["max-results"])
+        args = event.get_argument()
 
+        max_results = int(extension.preferences["max-results"])
         for project in project_folders:
-            if KeywordQueryEventListener.found_match(project, search_terms):
+            if args is not None and args in project:
                 found_projects.append(
                     ExtensionResultItem(
-                        icon="images/opener.png",
                         name=project,
                         on_enter=ExtensionCustomAction({"project_path": project}),
                     )
                 )
-                if len(found_projects) == max_results:
-                    break
+            if len(found_projects) == max_results:
+                break
 
         return RenderResultListAction(found_projects)
 
