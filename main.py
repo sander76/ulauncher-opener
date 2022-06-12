@@ -69,6 +69,7 @@ class KeywordQueryEventListener(EventListener):
             if args is not None and args in project:
                 found_projects.append(
                     ExtensionResultItem(
+                        icon="images/opener.png",
                         name=project,
                         on_enter=ExtensionCustomAction({"project_path": project}),
                     )
