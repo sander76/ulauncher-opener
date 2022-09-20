@@ -1,4 +1,5 @@
 import logging
+import os
 import subprocess
 from pathlib import Path
 
@@ -88,7 +89,9 @@ class ItemEnterEventListener(EventListener):
         data = event.get_data()
 
         code_executable = extension.preferences["code_executable_path"]
-        subprocess.run([code_executable, data["project_path"]])
+        envs = os.environ.copy()
+        envs.pop("PYTHONPATH")
+        subprocess.run([code_executable, data["project_path"]], env=envs)
 
 
 if __name__ == "__main__":
