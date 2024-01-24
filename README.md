@@ -2,6 +2,11 @@
 
 Provide a list of folders (using the Ulauncher settings) and this plugin will look for matches between user input and child folders. If a match, press enter and the folder will automatically be opened in vs code.
 
+
+# Configuration
+
+provide the full path to the root folder you want scanned.
+
 ## Development.
 
 Below some helper comments to get you started with development.
